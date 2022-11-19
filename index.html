@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Top 20 most dangerous cities in Florida</title>
+
+    <link href="styles/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
+
+
+  </head>
+
+  <body>
+
+<h1 id="containerh">Top 20 most dangerous cities in Florida</h1>
+
+
+<article>
+
+ <div id="map2"></div>
+
+ <p id="containerp">By: Isabella Douglas</p>
+
+ <p>This map shows a listing of the top 20 most dangerous Florida cities with a population larger than 25,000 residents. Data is from <a href="https://www.moneygeek.com/living/safest-cities/florida/">moneygeek.com.</a></p>
+
+ </article>
+
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+  <script src="scripts/places.js"></script>
+
+<script>
+
+  let map = L.map('map2').setView([28.773682, -81.654859], 5.50);
+  L.tileLayer('https://api.mapbox.com/styles/v1/issadouglas/clan648qn003614nx229914y4/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNzYWRvdWdsYXMiLCJhIjoiY2xhbTB4cTg2MGFxYTN3c3hncG95aGx0dSJ9.vn_1rs2hgroPhEj9h8UfhA', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+}).addTo(map);
+
+for ( let i = 0; i < places.length; i++) {
+  L.marker( [places[i].latitude, places[i].longitude])
+  .bindPopup('<h3>' + places[i].placeName + '</h3>' + '<p>' + places[i].descrip + '</p>')
+  .addTo(map);
+
+}
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gainesville Story Map</title>
+
+    <link href="styles/firstmain.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
+
+
+  </head>
+
+  <body>
+
+<h1 id="containerh">Significant places I have traveled to in Gainesville as a journalist</h1>
+
+
+<article>
+
+ <div id="map1"></div>
+
+ <p id="containerp">By: Isabella Douglas</p>
+
+ <p>This map shows four very significant places I attended for an article. Each location, and each story, meant a great deal to me to the point where I actively traveled to the location to understand key facts, gain sensory deatils and talk to vital sources.</p>
+
+ </article>
+
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+<script>
+  let map = L.map('map1').setView([29.635574, -82.317913], 11.21);
+  L.tileLayer('https://api.mapbox.com/styles/v1/issadouglas/clam107wu000215o0pe240cdz/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNzYWRvdWdsYXMiLCJhIjoiY2xhbTB4cTg2MGFxYTN3c3hncG95aGx0dSJ9.vn_1rs2hgroPhEj9h8UfhA', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+}).addTo(map);
+
+
+let popup1 = L.marker([29.646488963283012, -82.34780307430748]).addTo(map);
+popup1.bindPopup("<b>Reitz Union</b><br>This is where I discovered a lack of cameras in a certain location of the food court, which hindered a sexual violence investigation conducted by the university police department.").openPopup();
+
+let  popup2 = L.marker([29.676223155349934, -82.38715363089841]).addTo(map);
+popup2.bindPopup("<b>Ziba Salon</b><br>This was where I witnessed and wrote about a Guiness World Record being broken for the most eyebrows threaded in one hour.").openPopup();
+
+let popup3 = L.marker([29.584956288629787, -82.44283306191393]).addTo(map);
+popup3.bindPopup("<b>Hoggetown Medieval Faire</b><br>I traveled here for three days to report on the festivities for a feature story.").openPopup();
+
+let popup4 = L.marker([29.668274333257486, -82.33917987903644]).addTo(map);
+popup4.bindPopup("<b>Johnston Chiropractor</b><br>I attended a protest and wrote located here  and wrote an investigation piece after discovering one of the chiropractors working here sexually assaulted a  young woman.").openPopup();
+
+
+  </script>
+
+
+</body>
+</html>
